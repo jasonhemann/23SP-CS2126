@@ -25,7 +25,7 @@ github                   : [metadata]
 url                      : "http://jasonhemann.github.io"
 baseurl                  : "/23SP-CS2126"
 sourceurl                : "http://github.com/jasonhemann"
-repository               : "/23SP-CS2126"
+repository               : "jasonhemann/23SP-CS2126"
 teaser                   : "/assets/images/500x300.png"
 logo                     : "" # "/assets/images/88x88.png"
 masthead_title           : "Spring 2023 Data Structures & Algorithms"
@@ -226,6 +226,7 @@ permalink: /:categories/:title/
 
 # Plugins (previously gems:)
 plugins:
+  - jekyll-remote-theme
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
