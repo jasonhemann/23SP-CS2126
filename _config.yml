@@ -22,7 +22,7 @@ subtitle                 : "Spring 2023"
 name                     : "Jason Hemann"
 description              : # "CS 2126"
 github                   : [metadata]
-url                      : "http://jasonhemann.github.io"
+url                      : "https://hemann.pl"
 baseurl                  : "/23SP-CS2126"
 sourceurl                : "http://github.com/jasonhemann"
 repository               : "jasonhemann/23SP-CS2126"
