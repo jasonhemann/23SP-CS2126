@@ -20,7 +20,7 @@ repository.
 
 If you are unfamiliar with making pull requests, you can find plenty
 of documentation both from your terminal and [on the
-web](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
+web](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
 
 ## Racket
 
