@@ -8,8 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Check published links (report only)
-        continue-on-error: true
+      - name: Check published links
         uses: JustinBeckwith/linkinator-action@v2
         with:
           paths: https://hemann.pl/23SP-CS2126
