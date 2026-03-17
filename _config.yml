@@ -24,7 +24,7 @@ description              : # "CS 2126"
 github                   : [metadata]
 url                      : "https://hemann.pl"
 baseurl                  : "/23SP-CS2126"
-sourceurl                : "http://github.com/jasonhemann"
+sourceurl                : "https://github.com/"
 repository               : "jasonhemann/23SP-CS2126"
 teaser                   : "/assets/images/500x300.png"
 logo                     : "" # "/assets/images/88x88.png"
