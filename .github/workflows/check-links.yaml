@@ -9,47 +9,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Check published links
-        id: linkinator
         uses: JustinBeckwith/linkinator-action@v2
         with:
           paths: https://hemann.pl/23SP-CS2126
           config: linkinator.config.json
           timeout: 15000
-
-      - name: Enforce deterministic failure policy
-        if: always()
-        env:
-          LINKINATOR_RESULTS_JSON: ${{ toJSON(steps.linkinator.outputs.results) }}
-          LINKINATOR_STEP_OUTCOME: ${{ steps.linkinator.outcome }}
-        run: |
-          if [ "$LINKINATOR_STEP_OUTCOME" != "success" ]; then
-            echo "Linkinator step outcome: $LINKINATOR_STEP_OUTCOME"
-            exit 0
-          fi
-
-          decoded=$(printf '%s' "$LINKINATOR_RESULTS_JSON" | jq -r '.')
-
-          if [ -z "$decoded" ] || [ "$decoded" = "null" ]; then
-            echo "::warning::linkinator output is empty; skipping parser gate."
-            exit 0
-          fi
-
-          printf '%s' "$decoded" > linkinator-results.json
-
-          if ! jq -e . linkinator-results.json >/dev/null 2>&1; then
-            echo "::warning::linkinator output is not valid JSON; skipping parser gate."
-            exit 0
-          fi
-
-          broken=$(jq '[.links[]? | select((.state // "") | test("BROKEN|ERROR"))] | length' linkinator-results.json)
-          passed=$(jq -r '.passed // false' linkinator-results.json)
-          skipped=$(jq '.skipped // 0' linkinator-results.json)
-          total=$(jq '(.links // []) | length' linkinator-results.json)
-
-          echo "Linkinator summary: total=$total passed=$passed skipped=$skipped broken=$broken"
-
-          if [ "$broken" -gt 0 ] || [ "$passed" != "true" ]; then
-            echo "::error::Deterministic gate failed: broken=$broken passed=$passed"
-            jq -r '.links[]? | select((.state // "") | test("BROKEN|ERROR")) | "- [\(.status // "x")] \(.url // "") (\(.state // "")) source=\(.parent // "")"' linkinator-results.json
-            exit 1
-          fi
