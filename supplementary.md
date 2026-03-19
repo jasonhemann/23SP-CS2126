@@ -69,7 +69,7 @@ javac Main.java; java Main
 - [The sights and sounds of sorting](https://www.youtube.com/watch?v=xoR-1KwQh2k)
 - [Other traveling salesman solution](https://xkcd.com/399/)
 - [A short history of computational complexity](https://web.archive.org/web/20200913201653id_/http://people.cs.uchicago.edu/~fortnow/papers/history.pdf)
-- [Python and Java sorting algorithms were broken!](http://www.envisage-project.eu/proving-android-java-and-python-sorting-algorithm-is-broken-and-how-to-fix-it/)
+- [Verifying OpenJDK's Sort Method for Generic Collections (TimSort bug)](https://link.springer.com/article/10.1007/s10817-017-9426-4)
 
 ## Fun
 
