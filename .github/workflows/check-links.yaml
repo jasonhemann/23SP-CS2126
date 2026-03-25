@@ -7,7 +7,7 @@ jobs:
   linkinator:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Check published links
         uses: JustinBeckwith/linkinator-action@v2
         with:
